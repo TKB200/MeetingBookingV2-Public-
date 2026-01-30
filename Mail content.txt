@@ -1,0 +1,47 @@
+Subject: Meeting Booking Approved
+
+local host link  -  http://localhost/MeetingBooking/
+
+
+
+
+Hello {{to_name}},
+
+Good news — your meeting booking has been approved.
+
+Details:
+- Room: {{room}}
+- Date: {{date}}
+- Time: {{time}}
+
+If you need to make changes or have questions, please contact the admin or reply to this message.
+
+Regards,
+Meeting Booking Team
+
+---
+
+Notes for developers:
+
+- EmailJS template variables (example):
+  - to_name, to_email, room, date, time
+  - Example template params object:
+    {
+      to_name: payload.to_name,
+      to_email: payload.to,
+      room: payload.room,
+      date: payload.date,
+      time: payload.start + ' - ' + payload.end
+    }
+
+- PHPMailer/Server-side plain-text message (same content):
+
+  $subject = 'Meeting Booking Approved';
+  $message = "Hello " . $name . ",\n\n";
+  $message .= "Your booking for " . $room . " on " . $date . " has been approved.\n\n";
+  $message .= "Time: " . $start . " - " . $end . "\n\n";
+  $message .= "If you have any questions, contact support.\n\nRegards,\nMeeting Booking Team";
+
+- Placeholders in `admin/index.php` for EmailJS must be replaced with your EmailJS User ID, Service ID, and Template ID.
+
+- If you want an HTML version, wrap the body in HTML tags and set the EmailJS/PHPMailer to send HTML.
