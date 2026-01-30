@@ -45,3 +45,10 @@ Notes for developers:
 - Placeholders in `admin/index.php` for EmailJS must be replaced with your EmailJS User ID, Service ID, and Template ID.
 
 - If you want an HTML version, wrap the body in HTML tags and set the EmailJS/PHPMailer to send HTML.
+
+Intuitive Dashboards
+Live Availability Tracking
+Interactive Calendar
+Smart Booking Workflow
+Instant Notifications
+Admin Control Center
